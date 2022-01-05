@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRB 210112A</title>
+    <style>
+    img {
+        width: 500px
+    }
+    </style>
+</head>
+<body>
+    <h1>GRB 210112A</h1>
+    <p>
+    Date: <br>
+    Time: <br>
+    Longitude: <br>
+    Latitude: <br> <br>
+    Two or three possible flares at: <br>
+    > 60-100s <br>
+    > 102-140s <br>
+    > 156-158s
+    </p>
+
+    <h2>XRT Lightcurve</h2>
+    <p>The burst appears to have two flares early in the lightcurve, at 64.4—82.9s and 95.9—161s. The best fit includes a powerlaw of 5 breaks.</p>
+    <img src="lightcurve/xrt_lightcurve.png" alt="">
+    <p><i>Figure 1: Swift XRT lightcurve. Flux against the trigger time. For this burst, T0=632108250.112s.</i></p>
+
+    <h2>Fitted Lightcurve (lcfit)</h2>
+    <p>The lightcurve is fitted using lcfit with a two component Willingale model, representing the underlying flare model; and three gaussian peaks modelling the flaring activity. Best fit model parameters are, with Delta fit-statistic of 2.706:</p>
+    
+    <pre>
+MODEL: Willingale(1) + Willingale(2) + Gaussian(3) + Gaussian(4) + Gaussian(5)
+
+-------------------------------------------
+Par   Par Name            Value       
+-------------------------------------------
+COMPONENT: Willingale
+1    alpha_c              2.8285   
+2    T_c                  202.13   
+3    t_c                   1e-05   FROZEN
+4    F_c              2.3464e-09   
+COMPONENT: Willingale
+5    alpha_c              1.2275   
+6    T_c                  3484.8   
+7    t_c                   1e-05   FROZEN
+8    F_c                   1e-10   
+COMPONENT: Gaussian
+9    T centre             107.74   
+10    Width                6.0407   
+11    Normalization    7.4651e-09   
+COMPONENT: Gaussian
+12    T centre                132   
+13    Width                5.2532   
+14    Normalization    3.1894e-09   
+COMPONENT: Gaussian
+15    T centre             71.383   
+16    Width                5.3101   
+17    Normalization    3.3124e-08   
+-------------------------------------------
+    </pre>
+
+    <img src="lightcurve/fitting/grb210112A_lc.png" alt="">
+    <p><i>Figure 2: The XRT lightcurve of GRB 210112A with a model fitted using the lcfit software. The model was a two component Willingale model, with three additional gaussian peak components to model the flares. Bottom: the ratio of data to model.</i></p>
+
+    <h2>Combined XRT + BAT Spectrum(s)</h2>
+    <h3>Full time spectrum (t-0 --> t+10000)</h3>
+    <p>Combined fit spectrum.</p>
+    <pre>
+========================================================================
+Model 1:TBabs<1>*zTBabs<2>*powerlaw<3> Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+    par  comp
+                            Data group: 1
+    1    1   TBabs      nH         10^22    2.39624E-05  +/-  2.31634E-02  
+    2    2   zTBabs     nH         10^22    2.15283      +/-  0.253457     
+    3    2   zTBabs     Redshift            2.00000      frozen
+    4    3   powerlaw   PhoIndex            1.53956      +/-  1.17034E-02  
+    5    3   powerlaw   norm                0.356095     +/-  6.76891E-03  
+                            Data group: 2
+    6    1   TBabs      nH         10^22    2.39624E-05  = 1:p1
+    7    2   zTBabs     nH         10^22    2.15283      = 1:p2
+    8    2   zTBabs     Redshift            2.00000      = 1:p3
+    9    3   powerlaw   PhoIndex            1.53956      = 1:p4
+    10    3   powerlaw   norm                0.356095     = 1:p5
+________________________________________________________________________
+    </pre>
+    <img src="combined-firsttime/joint_spectrum.png" alt="">
+    <p><i>Figure 3: Caption.</i></p>
+    <img src="combined-firsttime/joint_model.png" alt="">
+    <p><i>Figure 4: Combined spectrum model.</i></p>
+
+    <h3>First Flare (t+60 --> t+100)</h3>
+
+    <h2>Spectral Fits</h2>
+    <p>Constant intrinsic component of X. Model in every phase is tbabs*ztbabs(powerlaw). Redshift estimate of 2 from (source). Can't use slewing data. Can't combine WT and PC data. Overlaid with flare times and also lightcurve.</p>
+    <img src="full-time_phoind.png" alt="">
+    <h2>Other observations</h2>
+
+</body>
+</html>
