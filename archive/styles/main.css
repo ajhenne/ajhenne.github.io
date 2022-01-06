@@ -28,11 +28,16 @@ canvas {
   margin: 0 auto;
 }
 
+.here-here {
+	width: 90%;
+}
+
 .title-row {
   text-align: left;
   width: 100%;
   font-size: 5rem;
   font-weight: bold;
+
 }
 
 td {
