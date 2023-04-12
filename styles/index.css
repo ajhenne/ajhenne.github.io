@@ -13,7 +13,9 @@
 /* main colour selectors */
 :root {
   --col-primary:   hsla(0, 0%, 100%, 1);
-  --col-secondary: hsla(40, 100%, 50%, 1)
+  --col-secondary: hsla(40, 100%, 50%, 1);
+  --col-selected: rgba(255, 255, 255, 0.283);
+
 }
 
 /* ======================================================= */
@@ -31,6 +33,12 @@
   position: absolute;
   object-fit: cover;
   overflow: hidden;
+  z-index: -1;
+}
+
+canvas {
+  background: #111;
+  position: fixed;
   z-index: -1;
 }
 
@@ -57,7 +65,7 @@
 
 /* main title words */
 .main-title {
-  font-size: 12rem;
+  font-size: 10rem;
   text-align: center;
 }
 
@@ -73,20 +81,17 @@
   text-align: center;
   width: 33%;
   font-size: 2rem;
-
 }
 
 .navigation-button a {
   text-decoration: none;
   color: var(--col-primary);
-  margin: 0 2px;
   display: block;
   height: 100%;
-  vertical-align: middle;
   line-height: 10rem;
 }
 
 .navigation-button a:hover {
-  border-bottom: 3px solid var(--col-primary);
+  background: var(--col-selected);
 
 }
