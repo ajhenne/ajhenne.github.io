@@ -1,6 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user, UserMixin, AnonymousUserMixin
-import sqlite3
+# import sqlite3
+
+from sqlalchemy import create_engine, Table, MetaData, text, insert
+
+# Create tables.
+engine = create_engine('sqlite:///database.db')
+meta = MetaData()
+meta.create_all(engine)
+table_aprimon = Table('aprimon_master', meta, autoload_with=engine)
 
 class User(UserMixin):
     def __init__(self, name, id, active=True):
@@ -52,7 +60,7 @@ def index():
     else:
         check_login_status = False
         print('User NOT logged in')
-        
+
     return render_template("index.html", title='Stratus')
 
 @app.route("/login", methods=["GET", "POST"])
@@ -84,15 +92,13 @@ def logout():
 @app.route('/aprimon')
 def aprimon():
 
-    # Get database.
-    conn = sqlite3.connect('database.db')
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM aprimon_master')
-    rows = cursor.fetchall()
-    conn.close()
-    columns = [column[0] for column in cursor.description]  # Get column names
-    row_data = [dict(zip(columns, row)) for row in rows]
+    # Get data from table.
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * FROM aprimon_master"))
+        rows = result.fetchall()
+        conn.close()
+        columns = result.keys()
+        row_data = [dict(zip(columns, row)) for row in rows]
 
     # Check logged in.
     if current_user.is_authenticated:
@@ -107,17 +113,17 @@ def aprimon():
 @app.route('/add_aprimon', methods=['POST'])
 @login_required
 def add_row():
-
     name = request.json.get('name')
     if name:
-        conn = sqlite3.connect('database.db')
-        cursor = conn.cursor()
-        cursor.execute("INSERT INTO aprimon_master (name) VALUES (?)", (name,))
-        conn.commit()
-        conn.close()
+        with engine.connect() as conn:
+            addrow = insert(table_aprimon).values(name=name)
+            conn.execute(addrow)
+            conn.commit()
+            conn.close()
         return jsonify({'status': 'success'})
 
     return jsonify({'status': 'error'})
 
+###
 if __name__ == '__main__':
     app.run(debug=True)
