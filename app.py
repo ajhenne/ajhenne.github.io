@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user, UserMixin, AnonymousUserMixin
-# import sqlite3
-
 from sqlalchemy import create_engine, Table, MetaData, text, insert
 
 # Create tables.
@@ -65,7 +63,6 @@ def index():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-
     if request.method == "POST":
         username = request.json.get('username')
         if username in USER_NAMES:
@@ -91,7 +88,6 @@ def logout():
 
 @app.route('/aprimon')
 def aprimon():
-
     # Get data from table.
     with engine.connect() as conn:
         result = conn.execute(text("SELECT * FROM aprimon_master"))
@@ -99,7 +95,6 @@ def aprimon():
         conn.close()
         columns = result.keys()
         row_data = [dict(zip(columns, row)) for row in rows]
-
     # Check logged in.
     if current_user.is_authenticated:
         check_login_status = True
@@ -107,7 +102,6 @@ def aprimon():
     else:
         check_login_status = False
         print('User NOT logged in')
-
     return render_template('aprimon.html', data=row_data, login_status=check_login_status)
 
 @app.route('/add_aprimon', methods=['POST'])
@@ -121,8 +115,8 @@ def add_row():
             conn.commit()
             conn.close()
         return jsonify({'status': 'success'})
-
     return jsonify({'status': 'error'})
+
 
 ###
 if __name__ == '__main__':
