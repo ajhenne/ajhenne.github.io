@@ -4,8 +4,8 @@ import datetime
 
 def backup_database():
     # Source and destination paths
-    source_path = "database.db"
-    archive_folder = "archive"
+    source_path = "/home/henne/stratus/database.db"
+    archive_folder = "/home/henne/stratus/archive/"
 
     # Create the archive folder if it doesn't exist
     os.makedirs(archive_folder, exist_ok=True)
