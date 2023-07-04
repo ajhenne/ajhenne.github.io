@@ -20,6 +20,8 @@ def backup_database():
     # Copy the database file to the archive folder
     shutil.copy2(source_path, destination_path)
 
+    print(f"copied to {destination_path}")
+
     # Retrieve a list of all backup files in the archive folder
     backup_files = os.listdir(archive_folder)
 
