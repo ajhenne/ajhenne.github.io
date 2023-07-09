@@ -1,12 +1,30 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user, UserMixin, AnonymousUserMixin
-from sqlalchemy import create_engine, Table, MetaData, text, insert
+from sqlalchemy import create_engine, Table, Column, Integer, Boolean, String, MetaData, text, insert
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 # Create tables.
 engine = create_engine('sqlite:///database.db')
 meta = MetaData()
 meta.create_all(engine)
 table_aprimon = Table('aprimon_master', meta, autoload_with=engine)
+
+Base = declarative_base()
+
+class Pokemon(Base):
+    __tablename__ = 'pokemon'
+    internalId = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(String)
+    nid = Column(String)
+    dexNum = Column(Integer)
+    name = Column(String)
+    formId = Column(String)
+    has_hidden = Column(Boolean)
+    abilities = Column(String)
+
+Session = sessionmaker(bind=engine)
+session = Session()
 
 class User(UserMixin):
     def __init__(self, name, id, active=True):
@@ -117,7 +135,34 @@ def add_row():
         return jsonify({'status': 'success'})
     return jsonify({'status': 'error'})
 
+@app.route('/search_pokemon', methods=['POST'])
+@login_required
+def search_pokemon():
+    search = request.json.get('name')
+    if search:
+        with engine.connect() as conn:
+            matching_pokemon = session.query(Pokemon).filter(Pokemon.name.like(f"{search}%")).all()
+            results = [{'internalId': pokemon.internalId, 'name': pokemon.name} for pokemon in matching_pokemon]
 
-###
+            if len(matching_pokemon) > 0:
+                return jsonify({'status': 'success', 'results': results})
+
+            return jsonify({'status': 'not_found'})
+    
+    return jsonify({'status': 'error'})
+
+# Search works great, it pulls up the Pokemon correctly.
+# Now redesign the search form so it displays the results
+# a bit more interactively and nicely.
+
+# Then I can move onto editrow.
+
+# Also on reddit there's some comments saying how to use
+# a secure password. Need to set an environmental variable
+# on pythonanywhere and pass that to this script.
+
+
+
+##
 if __name__ == '__main__':
     app.run(debug=True)
