@@ -1,28 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user, UserMixin, AnonymousUserMixin
-from sqlalchemy import create_engine, Table, Column, Integer, Boolean, String, MetaData, text, insert
+
+from sqlalchemy import create_engine, Table, MetaData, text, insert
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from classes import Pokemon
 
 # Create tables.
 engine = create_engine('sqlite:///database.db')
 meta = MetaData()
 meta.create_all(engine)
 table_aprimon = Table('aprimon_master', meta, autoload_with=engine)
-
-Base = declarative_base()
-
-class Pokemon(Base):
-    __tablename__ = 'pokemon'
-    internalId = Column(Integer, primary_key=True, autoincrement=True)
-    id = Column(String)
-    nid = Column(String)
-    dexNum = Column(Integer)
-    name = Column(String)
-    formId = Column(String)
-    has_hidden = Column(Boolean)
-    abilities = Column(String)
-
+ 
 Session = sessionmaker(bind=engine)
 session = Session()
 
@@ -35,17 +23,11 @@ class User(UserMixin):
     def is_active(self):
         return self.active
 
-class Anonymous(AnonymousUserMixin):
-    name = u"Anonymous"
-
 USERS = {
     1: User(u"henne", 1)
 }
 
 USER_NAMES = dict((u[1].name, u[1]) for u in USERS.items())
-# USER_NAMES = dict([(u.name, u) for u in USERS.items()])
-
-# USER_NAMES = dict((u.name, u) for u in USERS.items())
 
 app = Flask(__name__, template_folder='pages')
 app.config['SECRET_KEY'] = 'stratus2023'
@@ -53,7 +35,6 @@ app.config.from_object(__name__)
 # admin_pass = 'test'
 
 login_manager = LoginManager()
-login_manager.anonymous_user = Anonymous
 login_manager.login_view = "login"
 login_manager.login_message = u"Please log in to access this page."
 login_manager.refresh_view = "reauth"
@@ -142,7 +123,7 @@ def search_pokemon():
     if search:
         with engine.connect() as conn:
             matching_pokemon = session.query(Pokemon).filter(Pokemon.name.like(f"{search}%")).all()
-            results = [{'internalId': pokemon.internalId, 'name': pokemon.name} for pokemon in matching_pokemon]
+            results = [{'internalId': pokemon.internalId, 'name': pokemon.name, 'sprite': pokemon.sprite} for pokemon in matching_pokemon]
 
             if len(matching_pokemon) > 0:
                 return jsonify({'status': 'success', 'results': results})
