@@ -63,18 +63,28 @@
     <!-- Add Pokemon -->
     
 
-    <div id="add-aprimon-popup" class="popup hidden">
-      <div class="add-aprimon-content">
-        <h2>Add New Pokemon</h2>
-        <form id="add-row-form">
-          <label for="add-aprimon-input">Pokemon name:</label>
-          <input type="text" id="add-aprimon-input" required>
-          <button type="submit">Submit</button>
 
-          <select id="result-dropdown"></select>
-        </form>
-      </div>
+    <div id="add-aprimon-popup" class="popup hidden">
+
+        <div id="add-aprimon-grd">
+
+            <div class="add-aprimon-content">
+                <h2>Add New Pokemon</h2>
+                <form id="add-row-form">
+                  <label for="add-aprimon-input">Pokemon name:</label>
+                  <input type="text" id="add-aprimon-input" required>
+                  <button type="submit">Submit</button>
+        
+                  <select id="result-dropdown"></select>
+                </form>
+              </div>
+
+              <div id="search-container"></div>
+
+        </div>
+
     </div>
+
 
 
     <table id="aprimon-table">
@@ -97,16 +107,16 @@
         {% for row in data %}
         <tr>
             <td class="pkmn-name">{{ row.name }}</td>
-            <td class="ball"><img src="../static/sprites/fast-ball.png" alt="" class="{% if row.fast == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/lure-ball.png" alt="" class="{% if row.lure == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/level-ball.png" alt="" class="{% if row.level == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/heavy-ball.png" alt="" class="{% if row.heavy == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/love-ball.png" alt="" class="{% if row.love == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/moon-ball.png" alt="" class="{% if row.moon == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/dream-ball.png" alt="" class="{% if row.dream == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/beast-ball.png" alt="" class="{% if row.beast == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/safari-ball.png" alt="" class="{% if row.safari == 0 %}greyscale{% endif %}"></td>
-            <td class="ball"><img src="../static/sprites/sport-ball.png" alt="" class="{% if row.sport == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/fast-ball.png" alt="" class="{% if row.fast == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/lure-ball.png" alt="" class="{% if row.lure == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/level-ball.png" alt="" class="{% if row.level == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/heavy-ball.png" alt="" class="{% if row.heavy == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/love-ball.png" alt="" class="{% if row.love == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/moon-ball.png" alt="" class="{% if row.moon == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/dream-ball.png" alt="" class="{% if row.dream == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/beast-ball.png" alt="" class="{% if row.beast == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/safari-ball.png" alt="" class="{% if row.safari == 0 %}greyscale{% endif %}"></td>
+            <td class="ball"><img src="../static/sprites/balls/sport-ball.png" alt="" class="{% if row.sport == 0 %}greyscale{% endif %}"></td>
         </tr>
         {% endfor %}
         </tbody>

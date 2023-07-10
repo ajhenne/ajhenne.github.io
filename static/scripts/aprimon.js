@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const addRowBtn = document.getElementById('add-aprimon-btn');
   const popup = document.getElementById('add-aprimon-popup');
   const addRowForm = document.getElementById('add-row-form');
+  const searchGridContainer = document.getElementById('search-container');
 
   const fieldInput = document.getElementById('add-aprimon-input');
 
@@ -12,12 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
     popup.classList.remove('hidden');
   });
 
+  // Input form listener.
   fieldInput.addEventListener('input', searchName);
 
   function searchName() {
     const enteredName = fieldInput.value;
-    const dropdown = document.getElementById('result-dropdown');
-    dropdown.innerHTML = '';
+
+    searchGridContainer.innerHTML = ''
 
     fetch('/search_pokemon', {
       method: 'POST',
@@ -28,18 +30,32 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(data => {
-      if (data.status === 'success') {
-        data.results.forEach(result => {
-          const option = document.createElement('option');
-          option.value = result.id;
-          option.text = result.name;
-          dropdown.appendChild(option);
-        });
-        dropdown.style.display = 'block';
 
+      // Search success; display results.
+      if (data.status === 'success') {
+        searchGridContainer.innerHTML = ''
+        data.results.forEach(result => {
+          console.log('static/sprites/pokemon/' + result.internalId + '.png')
+
+          const panel = document.createElement('div');
+          panel.classList.add('panel');
+
+          const image = document.createElement('img');
+          image.src = 'static/sprites/pokemon/' + result.internalId + '.png';
+          image.alt = 'image test'
+          panel.appendChild(image)
+          
+          const text = document.createElement('div');
+          text.classList.add('panel-text');
+          text.textContent = result.name
+          panel.appendChild(text)
+
+          searchGridContainer.appendChild(panel);
+        });
+
+      // Nothing found.
       } else if (data.status === 'not_found') {
-        dropdown.innerHTML = 'Test'
-        // Nothing found, show nothing found message.
+        searchGridContainer.innerHTML = '<p>Enter</p>'
       }
     })
     .catch(error => {
@@ -56,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name: fieldInput }),
+      body: JSON.stringify({ name: fieldInput.value }),
     })
     .then(response => response.json())
     .then(data => {
