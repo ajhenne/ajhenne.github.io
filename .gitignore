@@ -1,4 +1,10 @@
 node_modules/
-.DS_Store
-.harper-dictionary.txt
 eslint.config.mjs
+
+.DS_Store
+
+.harper-dictionary.txt
+
+_site/
+.jekyll_cache/
+.jekyll_metadata

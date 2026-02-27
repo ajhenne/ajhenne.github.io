@@ -1,0 +1,30 @@
+title: Adam Hennessy
+description: My personal portfolio website.
+email: ahenneuk@live.com
+
+url: "https://ajhenne.github.io"
+baseurl: ""
+
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - eslint.config.mjs
+  
+  - .git/
+  - .gitignore
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - README.md
+  - dev/
+  
+  - .DS_Store
+  - .harper-dictionary.txt
+
+port: 2525
+incremental: true

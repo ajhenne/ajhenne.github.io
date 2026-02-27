@@ -40,7 +40,7 @@ window.addEventListener('scroll', function () {
     const horizon = document.querySelector('.horizon-trigger');
     const horizonTop = horizon.offsetTop;
 
-    if (window.scrollY > horizonTop + 300) {
+    if (window.scrollY > horizonTop) {
         document.body.classList.add('light-mode');
         logoImg.src = "assets/burst_secondary.svg";
     } else {

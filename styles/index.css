@@ -1,3 +1,5 @@
+/* eslint-disable css/use-baseline */
+/* eslint-disable css/no-invalid-properties */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
@@ -591,21 +593,22 @@ body.light-mode .name-part {
 .horizon-trigger {
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    margin-top: -300px;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
+    scroll-margin-top: -300px; 
 }
 
 .star-horizon {
     position: absolute;
-    top: 40vh;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 400vw;
-    height: 300vw;
+    height: 400vw;
     background: #f8fafc;
     border-radius: 50%;
     z-index: 1;
-    overflow: hidden;
+    pointer-events: none;
     animation: solarPulse 8s infinite ease-in-out;
 }
 
@@ -626,8 +629,11 @@ body.light-mode .name-part {
 /* === PROJECT SPECIFIC ============================================ */
 
 #projects {
-    margin-top: 300px;
+    padding-top: 300px;
+}
 
+#projects .content-container {
+    margin-top: 0;
 }
 
 .project-grid {
@@ -664,6 +670,7 @@ body.light-mode .name-part {
     border-radius: 12px;
     overflow: hidden;
     margin: 15px 0;
+    border: 1px solid var(--light-border);
 }
 
 .project-image img {
@@ -692,13 +699,19 @@ body.light-mode .name-part {
     color: var(--text-secondary-main);
 }
 
+.project-panel h4 {
+    color: var(--secondary);
+    margin: 5px 0 0px 0;
+}
+
 .project-panel p {
     color: var(--text-secondary);
+    margin: 10px 0;
 }
 
 .tags-light {
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 
 .tag {
