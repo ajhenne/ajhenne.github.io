@@ -58,6 +58,7 @@ window.addEventListener('scroll', function () {
     }
 
     const navLinks = document.querySelectorAll('.progress-list a');
+    const navBar = document.querySelector('.side-progress');
 
 
     let current = "";
@@ -72,7 +73,14 @@ window.addEventListener('scroll', function () {
         }
     });
 
-navLinks.forEach(link => {
+    if (current === 'projects') {
+        console.log('lightmode');
+            navBar.classList.add('light-mode');
+    } else {
+        navBar.classList.remove('light-mode');
+    }
+
+    navLinks.forEach(link => {
         link.classList.remove('active');
         link.classList.remove('light-mode');
 
