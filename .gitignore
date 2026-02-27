@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+.harper-dictionary.txt
+eslint.config.mjs

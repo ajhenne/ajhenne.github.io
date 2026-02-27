@@ -1,0 +1,21 @@
+:root {
+    --primary: rgb(235, 182, 69);
+    /* --primary-glow: rgb(235, 182, 69);  */
+
+    --secondary: #2f7168;
+    --secondary-glow: rgba(45, 212, 191, 0.3);
+
+    --text-primary-main: #f8fafc;
+    --text-primary: #94a3b8;
+
+    --text-secondary-main: #0f172a;
+    --text-secondary: #334155;
+
+    --glass-bg: rgba(255, 255, 255, 0.01);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --panel-blur: blur(2px);
+
+    --light-bg: rgba(255, 255, 255, 0.5);
+    --light-border: rgba(47, 113, 104, 0.15);
+    --light-shadow: rgba(47, 113, 104, 0.08);
+}

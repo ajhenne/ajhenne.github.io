@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Adam Hennessy</title>
+    <link href="styles/variables.css" rel="stylesheet" text="text/css">
+    <link href="styles/index.css" rel="stylesheet" text="text/css">
+    <link rel="icon" type="image/svg+xml" href="assets/burst_primary.svg">
+    <script type="text/javascript" src="scripts/galaxyfield.js" defer></script>
+    <script type="text/javascript" src="scripts/index.js" defer></script>
+</head>
+
+<body>
+
+    <div id="transition-overlay" class="transition-overlay"></div>
+    b
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="#hero" class="nav-logo">
+                <img id="logo" src="assets/burst_primary.svg">
+                <span class="name-part">A<span class="expand">DAM</span></span>
+                <span class="name-part">H<span class="expand">ENNESSY</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about"><strike>About</strike></a></li>
+                <li><a href="#projects"><strike>Projects</strike></a></li>
+                <li><a href="#experience"><strike>Research</strike></a></li>
+                <li><a href="#resume"><strike>Resume</strike></a></li>
+                <li><a href="#content"><strike>Contact</strike></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="side-progress">
+        <ul class="progress-list">
+            <li><a href="#about" data-num="01"><span>About</span></a></li>
+            <li><a href="#projects" data-num="02"><span>Projects</span></a></li>
+        </ul>
+    </div>
+
+    <canvas id="galaxyfield"></canvas>
+
+    <main>
+
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="fade-in">ADAM <span class="accent">HENNESSY</span></h1>
+                <div class="rotate-box fade-in-delay">
+                    <div class="rotate-text">
+                        <div>PhD in High Energy Astrophysics</div>
+                        <div>Software & Data Engineer</div>
+                        <div>Quantitative Specialist</div>
+                    </div>
+                </div>
+                <p class="hero-story fade-in-delay">
+                    For the past four years, I have worked on gamma-ray busts, the most energetic explosions in the
+                    universe, primarily using the Swift space observatory and LOFAR radio interferometry telescope.
+                </p>
+                <p class="hero-story fade-in-delay">
+                    Processing terabyte-scale datasets in high-noise environments, and developing an automated
+                    predictive modelling pipeline for complex, time-series data has forged a deep expertise in
+                    statistical modelling and quantitative analysis.
+                </p>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div id="about" class="content-container glass-panel">
+                <div class="section-body about-grid">
+                    <div>
+                        <div class="section-header">
+                            <span class="section-number">01.</span>
+                            <h2>About Me</h2>
+                        </div>
+
+                        <div class="about-text">
+                            <p>
+                                While astrophysics will always be a passion of mine, the nature of my work (and perhaps
+                                research in general) meant that, at times, it was an interesting wrapper around a lot of
+                                programming, data processing and statistical analysis. Thankfully, I am quite passionate
+                                about everything data and coding.
+                            </p>
+                            <p>
+                                Through my PhD, and various projects I've done over the years, I've developed a strong
+                                foundation of programming and data-based skills, not limited to pipeline development,
+                                data
+                                modelling, statistical analysis, and data visualisation. No less within the astrophysics
+                                field, where data sources are inherently disparate, complex and noisy.
+                            </p>
+                            <p>
+                                My work has primarily been centered around Python, with some SQL. Alongside this, I have
+                                experience and interest in various other technologies. This includes a bit of C++, and
+                                several web development projects, including both static HTML/CSS/JavaScript sites, and
+                                full
+                                web apps with the Flask framework.
+                            </p>
+                        </div>
+                        <a href="pages/about.html" class="btn btn-warp">Find out more about me</a>
+                    </div>
+
+
+                    <div class="skills-list">
+                        <div class="skill-category">
+                            <h3>Key Technologies</h3>
+                            <div class="tech-grid">
+
+                                <div class="tech-item wide">
+                                    <div class="tech-icon">
+                                        <img src="assets/logos/python.svg">
+                                    </div>
+                                    <div class="tech-info">
+                                        <div class="tech-name">Python</div>
+                                        <div class="sub-skills">
+                                            <span class="skill-badge">Pandas</span>
+                                            <span class="skill-badge">SciPy</span>
+                                            <span class="skill-badge">Matplotlib</span>
+                                            <span class="skill-badge">Scikit-Learn</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="tech-item"><i data-lucide="database"></i><span>SQL</span></div>
+                                <div class="tech-item"><i data-lucide="git-branch"></i><span>Git</span></div>
+                                <div class="tech-item"><i data-lucide="terminal"></i><span>Bash/Linux</span></div>
+                                <div class="tech-item"><i data-lucide="file-text"></i><span>LaTeX</span></div>
+
+                                <!-- Web Dev with Sub-skills -->
+                                <div class="tech-item wide">
+                                    <div class="tech-icon">
+                                        <i data-lucide="globe"></i>
+                                    </div>
+                                    <div class="tech-info">
+                                        <div class="tech-name">Web Development</div>
+                                        <div class="sub-skills">
+                                            <span class="skill-badge">HTML/CSS/JS</span>
+                                            <span class="skill-badge">Flask</span>
+                                            <span class="skill-badge">Streamlit</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Core Competencies</h3>
+                            <ul class="competency-list">
+                                <li><i data-lucide="search"></i> Unstructured Data Retrieval</li>
+                                <li><i data-lucide="cpu"></i> Large-scale Data Processing</li>
+                                <li><i data-lucide="line-chart"></i> Quantitative Analysis</li>
+                                <li><i data-lucide="layout"></i> Technical Visualization</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section horizon-trigger">
+            <div class="star-horizon"></div>
+
+            <div id="projects" class="content-container light-theme-content">
+                <div class="section-header">
+                    <span class="section-number light-text">02.</span>
+                    <h2 class="dark-text">Featured Projects</h2>
+                </div>
+
+                <div class="section-body project-grid">
+                    <div class="light-panel project-panel">
+                        <h3>End-to-End Data Pipeline</h3>
+                        <div class="project-image">
+                            <img src="assets/projects/pipeline.jpg" alt="Pipeline Visualization">
+                        </div>
+                        <p>
+                            Designed an open-source Python pipeline using object-orientated principles,
+                            capable of automated predictive modelling for complex time-series data.
+                            Reduced manual overhead from hours to <strong>under 10 seconds</strong>.
+                        </p>
+                        <div class="tags-light">
+                            <span class="tag">Python</span>
+                            <span class="tag">HPC</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <a href="#" class="project-link">View Case Study →</a>
+                    </div>
+
+                    <div class="light-panel project-panel">
+                        <h3>High-Volume Data Analysis</h3>
+                        <div class="project-image">
+                            <img src="assets/projects/pipeline.jpg" alt="Pipeline Visualization">
+                        </div>
+                        <p>
+                            Led the data analysis lifecycle for major radio-frequency campaigns.
+                            Executed complex calibration workflows to extract weak signals from
+                            high-noise environments managing TB-scale datasets.
+                        </p>
+                        <div class="tags-light">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Statistics</span>
+                            <span class="tag">LOFAR</span>
+                        </div>
+                        <a href="#" class="project-link">View Case Study →</a>
+                    </div>
+                    <div class="light-panel project-panel">
+                        <h3>High-Volume Data Analysis</h3>
+                        <div class="project-image">
+                            <img src="assets/projects/pipeline.jpg" alt="Pipeline Visualization">
+                        </div>
+                        <p>
+                            Led the data analysis lifecycle for major radio-frequency campaigns.
+                            Executed complex calibration workflows to extract weak signals from
+                            high-noise environments managing TB-scale datasets.
+                        </p>
+                        <div class="tags-light">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Statistics</span>
+                            <span class="tag">LOFAR</span>
+                        </div>
+                        <a href="#" class="project-link">View Case Study →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+
+</body>
+
+
+
+</html>
