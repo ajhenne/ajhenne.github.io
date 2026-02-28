@@ -1,21 +1,24 @@
 ---
 ---
 
-<!DOCTYPE html>
-
 <html lang="en" dir="ltr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Adam Hennessy</title>
+
     <link href="/styles/variables.css" rel="stylesheet" text="text/css">
     <link href="/styles/index.css" rel="stylesheet" text="text/css">
     <link rel="icon" type="image/svg+xml" href="/assets/burst_primary.svg">
+
+    <script type="text/javascript" src="/scripts/main.js" defer></script>
     <script type="text/javascript" src="/scripts/galaxyfield.js" defer></script>
     <script type="text/javascript" src="/scripts/index.js" defer></script>
 </head>
 
 <body>
-    <div id="transition-overlay" class="transition-overlay"></div>
 
     <nav class="navbar">
         <div class="nav-container">
@@ -27,8 +30,8 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="{% link pages/about.html %}">About</a></li>
-                <li><a href="#projects"><strike>Projects</strike></a></li>
+                <li><a href="{% link /pages/about.html %}">About</a></li>
+                <li><a href="{% link /pages/projects.html %}">Projects</a></li>
                 <li><a href="#experience"><strike>Research</strike></a></li>
                 <li><a href="#resume"><strike>Resume</strike></a></li>
                 <li><a href="#content"><strike>Contact</strike></a></li>
@@ -106,7 +109,6 @@
                         <a href="/about/" class="btn btn-warp">Find out more about me</a>
                     </div>
 
-
                     <div class="skills-list">
                         <div class="skill-category">
                             <h3>Key Technologies</h3>
@@ -127,13 +129,11 @@
                                     </div>
                                 </div>
 
-
                                 <div class="tech-item"><i data-lucide="database"></i><span>SQL</span></div>
                                 <div class="tech-item"><i data-lucide="git-branch"></i><span>Git</span></div>
                                 <div class="tech-item"><i data-lucide="terminal"></i><span>Bash/Linux</span></div>
                                 <div class="tech-item"><i data-lucide="file-text"></i><span>LaTeX</span></div>
 
-                                <!-- Web Dev with Sub-skills -->
                                 <div class="tech-item wide">
                                     <div class="tech-icon">
                                         <i data-lucide="globe"></i>
@@ -176,15 +176,15 @@
                     <span class="section-number light-text">02.</span>
                     <h2 class="dark-text">Featured Projects</h2>
                 </div>
-                <!-- <p class="section-subtitle">A couple of projects highlighting some of the projects I've worked on. Click on the  project panel to find out more, or see the <a href="/projects/">main projects page</a> to explore what else I've been up to.</p> -->
-                
+                <!-- <p class="section-subtitle">A couple of projects highlighting some of the projects I've worked on. Click on the project panel to find out more, or see the <a href="/projects/">main projects page</a> to explore what else I've been up to.</p> -->
+
                 <div class="section-body project-grid">
 
                     <div class="light-panel project-panel">
                         <a href="#" class="project-link">
                             <h3>Lightcurve and Flare Fitter</h3>
                             <div class="project-image">
-                                <img src="assets/projects/laff/burst-viewer.png" alt="Pipeline Visualization">
+                                <img src="assets/projects/laff/burst_viewer.png" alt="Modelled GRB light curve">
                             </div>
                             <h4>End-to-End Pipeline Development</h4>
                             <p>
@@ -192,21 +192,23 @@
                                 burst light curves from the <i>Swift</i> space telescope.
                             </p>
                             <p>
-                                Weak signal finding within complex time-series data, comprised of multiple evolving components.
+                                Weak signal finding within complex time-series data, comprised of multiple evolving
+                                components.
                             </p>
                             <div class="tags-light">
                                 <span class="tag">Python</span>
                                 <span class="tag">Automation</span>
+                                <span class="tag">Statistics</span>
                             </div>
                         </a>
                         <div class="skills-side-panel">
                             <span class="side-panel-title">Key Skills</span>
                             <ul>
                                 <li>Pipeline development</li>
-                                <li>Algorithms</li>
                                 <li>Modular design</li>
                                 <li>Time-series analysis</li>
                                 <li>Predictive modelling</li>
+                                <li>Error analysis</li>
                             </ul>
                         </div>
                     </div>
@@ -215,24 +217,30 @@
                         <a href="#" class="project-link">
                             <h3>LAFF Viewer</h3>
                             <div class="project-image">
-                                <img src="assets/projects/laff-viewer/flare-pulses.png" alt="Pipeline Visualization">
+                                <img src="/assets/projects/laff-viewer/flarepulses.png"
+                                    alt="GRB flare and pulse population scatter">
                             </div>
-                            <h4>End-to-End Pipeline Development</h4>
+                            <h4>Data Visualisation</h4>
                             <p>
-                                An open-source Python data pipeline for the full modelling of <i>Swift</i> gamma-ray
-                                burst light curves.
+                                A Streamlit-based front-end data explorer for the individual results of my LAFF code,
+                                and population-level correlations.
+                            </p>
+                            <p>
+                                Persistent tracking and "drill-down" navigation form part of the data discovery
+                                lifecycle.
                             </p>
                             <div class="tags-light">
                                 <span class="tag">Python</span>
-                                <span class="tag">Automation</span>
+                                <span class="tag">Visualisation</span>
+                                <span class="tag">Web App</span>
                             </div>
                         </a>
                         <div class="skills-side-panel">
                             <span class="side-panel-title">Key Skills</span>
                             <ul>
-                                <li>End-to-End pipeline development</li>
-                                <li>Time-series analysis</li>
-                                <li>Predictive modelling</li>
+                                <li>Data visualisation</li>
+                                <li>UI Design</li>
+                                <li>Dashboard Development</li>
                             </ul>
                         </div>
                     </div>
@@ -240,30 +248,39 @@
                     <div class="light-panel project-panel">
                         <a href="#" class="project-link">
                             <h3>text2playlist</h3>
-                            <div class="project-image">
-                                <img src="assets/projects/laff-viewer/flare-pulses.png" alt="Pipeline Visualization">
+                            <div class="project-image dark">
+                                <img src="/assets/projects/text2playlist/overview.png"
+                                    alt="Screenshot of text2playlist website">
                             </div>
-                            <h4>End-to-End Pipeline Development</h4>
+                            <h4>Unstructured Data & API Integration</h4>
                             <p>
-                                An open-source Python data pipeline for the full modelling of <i>Swift</i> gamma-ray
-                                burst light curves.
+                                A small web application to parse text files (such as group chat logs) and extract music
+                                links.
+                            </p>
+                            <p>
+                                Uses the Odesli API to obtain metadata, generating automated YouTube playlists and
+                                Spotify URI exports from disparate datasources.
                             </p>
                             <div class="tags-light">
                                 <span class="tag">Python</span>
-                                <span class="tag">Automation</span>
+                                <span class="tag">API</span>
+                                <span class="tag">Web app</span>
                             </div>
                         </a>
                         <div class="skills-side-panel">
                             <span class="side-panel-title">Key Skills</span>
                             <ul>
-                                <li>End-to-End pipeline development</li>
-                                <li>Time-series analysis</li>
-                                <li>Predictive modelling</li>
+                                <li>Unstructured data parsing</li>
+                                <li>Regex pattern matching</li>
+                                <li>API integration</li>
                             </ul>
                         </div>
                     </div>
 
                 </div>
+
+                    <a href="/projects/" class="light-mode btn btn-warp">See all my projects</a>
+
             </div>
         </section>
 

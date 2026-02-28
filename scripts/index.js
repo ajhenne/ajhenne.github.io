@@ -1,6 +1,4 @@
 // Scrolling listeners.
-const logoImg = document.getElementById('logo');
-
 window.addEventListener('scroll', function () {
 
     const scrollY = window.scrollY;
@@ -42,10 +40,8 @@ window.addEventListener('scroll', function () {
 
     if (window.scrollY > horizonTop) {
         document.body.classList.add('light-mode');
-        logoImg.src = "assets/burst_secondary.svg";
     } else {
         document.body.classList.remove('light-mode');
-        logoImg.src = "assets/burst_primary.svg";
     }
 
 
@@ -74,7 +70,6 @@ window.addEventListener('scroll', function () {
     });
 
     if (current === 'projects') {
-        console.log('lightmode');
             navBar.classList.add('light-mode');
     } else {
         navBar.classList.remove('light-mode');
@@ -95,23 +90,4 @@ window.addEventListener('scroll', function () {
 
 
 
-});
-
-
-
-function pageTransition(targetUrl) {
-    const overlay = document.getElementById('transition-overlay');
-
-    overlay.classList.add('active');
-
-    setTimeout(() => {
-        window.location.href = targetUrl;
-    }, 400);
-}
-
-document.querySelectorAll('.btn-warp').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        pageTransition(link.href);
-    });
 });
