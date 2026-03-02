@@ -7,7 +7,7 @@
 
 - title: "LAFF Viewer"
   description: "Data visualization tool and dashboard singular and population datasets."
-  image: "/assets/projects/laff/burst_viewer.png"
+  image: "/assets/projects/laff-viewer/flarepulses.png"
   tags: ["Academic", "Data", "Python", "Visualisation", "Web"]
   url: "/projects/laff-viewer"
   github: "https://github.com/ajhenne/laff-viewer"
@@ -15,7 +15,7 @@
 
 - title: "text2playlist"
   description: "A backend processing engine optimized for low-latency SVG generation."
-  image: "/assets/projects/laff/burst_viewer.png"
+  image: "/assets/projects/text2playlist/overview.png"
   tags: ["API", "Data", "Python", "Web"]
   url: "/projects/text2playlist"
   github: "https://github.com/ajhenne/text2playlist"
