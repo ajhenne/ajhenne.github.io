@@ -3,7 +3,8 @@ window.addEventListener('scroll', function () {
 
     const scrollY = window.scrollY;
 
-    // SCROLL INDICATOR
+    // SCROLL INDICATOR #######################################################
+
     const startScroll = 50;
     const endScroll = 500;
 
@@ -22,10 +23,11 @@ window.addEventListener('scroll', function () {
     }
 
 
-    // NAV BAR
+    // NAME SLIDING ###########################################################
+
     const logo = document.querySelector('.nav-logo');
 
-    const startLogo = 300;
+    const startLogo = 350;
     const endLogo = 650;
 
     let scrollPercent = (scrollY - startLogo) / (endLogo - startLogo);
@@ -35,15 +37,19 @@ window.addEventListener('scroll', function () {
     logo.style.setProperty('--expand-progress', scrollPercent);
 
 
-    const horizon = document.querySelector('.horizon-trigger');
-    const horizonTop = horizon.offsetTop;
+    // LIGHT/DARK MODE ########################################################
 
-    if (window.scrollY > horizonTop) {
-        document.body.classList.add('light-mode');
-    } else {
-        document.body.classList.remove('light-mode');
-    }
+    // const horizonTop = document.querySelector('.star-start').offsetTop;
+    // const horizonBottom = document.querySelector('.star-end').offsetTop;
 
+    // if ((window.scrollY > horizonTop) && (window.scrollY < horizonBottom)) {
+    //     document.body.classList.add('light-mode');
+    // } else {
+    //     document.body.classList.remove('light-mode');
+    // }
+
+
+    // SIDE NAV VISIBLE #######################################################
 
     const sideNav = document.querySelector('.side-progress');
 
@@ -53,13 +59,15 @@ window.addEventListener('scroll', function () {
         sideNav.classList.remove('visible');
     }
 
+
+    // PAGE SELECTION #########################################################
+
     const navLinks = document.querySelectorAll('.progress-list a');
     const navBar = document.querySelector('.side-progress');
 
-
     let current = "";
 
-    const navAnchors = document.querySelectorAll('#about, #projects');
+    const navAnchors = document.querySelectorAll('#about, #projects, #contact');
 
     navAnchors.forEach(anchor => {
         const sectionTop = anchor.getBoundingClientRect().top + window.scrollY;
@@ -70,9 +78,11 @@ window.addEventListener('scroll', function () {
     });
 
     if (current === 'projects') {
-            navBar.classList.add('light-mode');
+        navBar.classList.add('light-mode');
+        document.body.classList.add('light-mode');
     } else {
         navBar.classList.remove('light-mode');
+        document.body.classList.remove('light-mode');
     }
 
     navLinks.forEach(link => {
@@ -87,7 +97,5 @@ window.addEventListener('scroll', function () {
             link.classList.add('light-mode');
         }
     });
-
-
 
 });
