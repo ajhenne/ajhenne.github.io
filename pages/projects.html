@@ -1,0 +1,95 @@
+---
+permalink: /projects/
+---
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adam Hennessy</title>
+
+    <link href="/styles/variables.css" rel="stylesheet" text="text/css">
+    <link href="/styles/projects.css" rel="stylesheet" text="text/css">
+    <link rel="icon" type="image/svg+xml" href="/assets/burst_primary.svg">
+
+    <script type="text/javascript" src="/scripts/main.js" defer></script>
+    <script type="text/javascript" src="/scripts/projects.js" defer></script>
+</head>
+
+<body class="light-mode">
+
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="{% link index.html %}" class="nav-logo">
+                <img id="logo" class="force-full-name" src="/assets/burst_primary.svg">
+                <span class="name-part force-full-name">ADAM HENNESSY</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="{% link pages/about.html %}">About</a></li>
+                <li><a href="{% link pages/projects.html %}">Projects</a></li>
+                <li><a href="#experience"><strike>Research</strike></a></li>
+                <li><a href="/assets/CV.pdf">Resume</a></li>
+                <li><a href="#content"><strike>Contact</strike></a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="projects-container">
+        <header class="projects-header">
+            <h1>PROJECTS</h1>
+            <p>A collection of my work spanning programming, data, and web development.</p>
+
+            <div id="filter-bar" class="filter-bar">
+                {% assign all_tags = "" | split: ',' %}
+                {% for project in site.data.projects %}
+                {% for tag in project.tags %}
+                {% assign all_tags = all_tags | push: tag %}
+                {% endfor %}
+                {% endfor %}
+                {% assign unique_tags = all_tags | uniq | sort %}
+
+                {% for tag in unique_tags %}
+                <button class="filter-btn" data-filter="{{ tag }}">{{ tag }}</button>
+                {% endfor %}
+
+                <button id="clear-filters" class="filter-clear-btn hidden">Clear ×</button>
+            </div>
+        </header>
+
+        <section class="projects-grid" id="projects-grid">
+            {% for project in site.data.projects %}
+            <div class="light-panel project-card" data-tags='{{ project.tags | jsonify }}'>
+                <div class="project-content">
+                    <h3>{{ project.title }}</h3>
+                    <div class="project-tags-row">
+                        {% for tag in project.tags %}
+                        <span class="tag-pill">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <p>{{ project.description }}</p>
+                    <!-- Insert these lines -->
+                </div>
+                {% if project.image %}
+                <div class="project-image">
+                    <img src="{{ project.image }}" alt="{{ project.title }} preview">
+                </div>
+                {% endif %}
+
+                <div class="project-actions">
+                    {% if project.url %}<a href="{{ project.url }}" class="btn btn-secondary">Case Study</a>{% endif %}
+                    {% if project.github %}<a href="{{ project.github }}" class="btn btn-outline">GitHub</a>{% endif %}
+                    {% if project.live %}<a href="{{ project.live }}" class="btn btn-outline">Live Site</a>{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+    s
+</body>
+
+</html>

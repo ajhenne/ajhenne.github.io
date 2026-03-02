@@ -1,0 +1,161 @@
+/* eslint-disable css/no-invalid-properties */
+
+.projects-container {
+    max-width: 1200px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+}
+
+.projects-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.projects-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--text-secondary-main);
+}
+
+
+/* === FILTER BAR ================================================== */
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--light-border);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
+}
+
+.filter-btn:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.filter-btn.active {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+/* Hidden state for viability logic */
+.hidden {
+    display: none;
+}
+
+.filter-clear-btn {
+    background: var(--primary); /* Or your theme color */
+    color: var(--text-primary-main);
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-clear-btn:hover {
+    color: var(--text-secondary-main);
+}
+
+/* === PROJECT GRID ================================================ */
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    border-color: var(--secondary);
+}
+
+.project-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+/* Project Image Styling */
+.project-image {
+    margin-top: auto;
+    margin-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid var(--light-border); /* Optional: adds a thin border around the image */
+}
+
+.project-image img {
+    width: 100%;
+    height: 180px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures image fills space without stretching */
+    display: block;
+}
+
+.tag-pill {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    /* border: 1px solid var(--light-border); */
+    letter-spacing: 1px;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: var(--text-secondary-main);
+}
+
+.btn-outline {
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.project-card.filtered-out {
+    display: none;
+}
+

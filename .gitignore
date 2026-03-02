@@ -7,4 +7,4 @@ eslint.config.mjs
 
 _site/
 .jekyll_cache/
-.jekyll_metadata
+.jekyll-metadata

@@ -5,7 +5,6 @@ email: ahenneuk@live.com
 url: "https://ajhenne.github.io"
 baseurl: ""
 
-
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -27,4 +26,3 @@ exclude:
   - .harper-dictionary.txt
 
 port: 2525
-incremental: true
