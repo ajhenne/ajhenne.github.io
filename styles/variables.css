@@ -19,6 +19,8 @@
     --light-bg: rgba(255, 255, 255, 0.5);
     --light-border: rgba(47, 113, 104, 0.15);
     --light-shadow: rgba(47, 113, 104, 0.08);
+
+    --light-fill: #f8fafc;
 }
 
 html {
@@ -38,22 +40,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body.light-mode {
-    color: var(--text-secondary);
-    background: #f8fafc;
-}
-
 h1,
 h2,
 h3 {
     color: var(--text-primary-main);
 }
 
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3 {
-    color: var(--text-secondary-main);
-}
 
 /* === NAVBAR ====================================================== */
 
@@ -164,11 +156,15 @@ body.light-mode .name-part {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
+.glass-panel h3 {
+    color: var(--text-primary-main);
+}
+
 .light-panel {
     background: var(--light-bg);
     border: 1px solid var(--light-border);
     border-radius: 24px;
-    padding: 2rem;
+    padding: 3rem 3rem 2rem 3rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 30px rgba(30, 41, 59, 0.05);
 }
