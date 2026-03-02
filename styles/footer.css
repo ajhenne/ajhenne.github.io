@@ -1,0 +1,13 @@
+.site-footer {
+    width: 100%;
+    display: flex;
+}
+
+.footer-content {
+    display: flex;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 5px 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: .8rem;
+}
