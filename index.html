@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Adam Hennessy</title>
 
     <link href="/styles/variables.css" rel="stylesheet" text="text/css">
@@ -33,8 +33,8 @@
                 <li><a href="{% link pages/about.html %}">About</a></li>
                 <li><a href="{% link pages/projects.html %}">Projects</a></li>
                 <li><a href="#experience"><strike>Research</strike></a></li>
-                <li><a href="/assets/CV.pdf">Resume</a></li>
-                <li><a href="#content"><strike>Contact</strike></a></li>
+                <li><a href="/assets/CV.pdf" target="_blank">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -43,6 +43,7 @@
         <ul class="progress-list">
             <li><a href="#about" data-num="01"><span>About</span></a></li>
             <li><a href="#projects" data-num="02"><span>Projects</span></a></li>
+            <li><a href="#contact" data-num="03"><span>Contact</span></a></li>
         </ul>
     </div>
 
@@ -168,10 +169,16 @@
             </div>
         </section>
 
-        <section id="projects" class="content-section horizon-trigger">
-            <div class="star-horizon"></div>
 
-            <div class="content-container light-theme-content">
+        <!-- <div class="star-horizon"></div> -->
+        <!-- <div class="star-horizon-bottom"></div> -->
+
+        <div class="star">
+            <div class="star-start"></div>
+        </div>
+
+        <section class="content-section light">
+            <div id="projects" class="content-container">
                 <div class="section-header">
                     <span class="section-number light-text">02.</span>
                     <h2 class="dark-text">Featured Projects</h2>
@@ -278,14 +285,92 @@
 
                 </div>
 
-                    <a href="/projects/" class="light-mode btn btn-warp">See all my projects</a>
+                <a href="/projects/" class="light-mode btn btn-warp">See all my projects</a>
 
+            </div>
+        </section>
+
+        <div class="star">
+            <div class="star-end"></div>
+        </div>
+
+        <section class="content-section">
+            <div id="contact" class="content-container glass-panel fade-in">
+                <div class="section-header">
+                    <span class="section-number">03.</span>
+                    <h2>Get In Touch</h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p class="contact-description">
+                            I am currently wrapping up my time in academia and transitioning into industry.
+                            I am <strong>actively seeking</strong> new roles in software engineering,
+                            data science, or quantitative analysis.
+                        </p>
+
+                        <div class="status-container">
+                            <div class="status-item">
+                                <i data-lucide="sparkles"></i>
+                                <span>Actively Seeking New Opportunities</span>
+                            </div>
+                            <div class="status-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>From the United Kingdom</span>
+                            </div>
+                            <div class="status-item">
+                                <i data-lucide="plane-takeoff"></i>
+                                <span>Open to relocation across the UK & Europe</span>
+                            </div>
+                        </div>
+
+                        <a href="mailto:adam.j.hennessy@outlook.com" class="btn">Get in touch</a>
+                    </div>
+
+                    <div class="contact-links-grid">
+                        <a href="https://github.com/ajhenne" class="contact-card" target="_blank">
+                            <i data-lucide="github"></i>
+                            <div class="card-content">
+                                <span class="card-label">GitHub</span>
+                                <span class="card-sub">Code & Pipelines</span>
+                            </div>
+                        </a>
+
+                        <a href="https://linkedin.com/in/ajhennessy" class="contact-card" target="_blank">
+                            <i data-lucide="linkedin"></i>
+                            <div class="card-content">
+                                <span class="card-label">LinkedIn</span>
+                                <span class="card-sub">Professional Network</span>
+                            </div>
+                        </a>
+
+                        <a href="https://scholar.google.com/citations?user=81y0dOoAAAAJ&hl=en" class="contact-card"
+                            target="_blank">
+                            <i data-lucide="graduation-cap"></i>
+                            <div class="card-content">
+                                <span class="card-label">Google Scholar</span>
+                                <span class="card-sub">Research Publications</span>
+                            </div>
+                        </a>
+
+                        <a href="/assets/CV.pdf" class="contact-card" target="_blank">
+                            <i data-lucide="file-text"></i>
+                            <div class="card-content">
+                                <span class="card-label">Resume</span>
+                                <span class="card-sub">Download PDF</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
 
 
+
     </main>
+
+    <footer></footer>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
