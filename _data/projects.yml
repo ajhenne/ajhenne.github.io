@@ -1,14 +1,26 @@
+# Python
+# Javascript
+
+# Data
+# Visualisation
+
+# Academic
+
+# Web
+# API
+# Unstructured Data
+
 - title: "Lightcurve and Flare Fitter"
   description: "Fully automated fitting of complex time-series astrophysical data."
   image: "/assets/projects/laff/burst_viewer.png"
-  tags: ["Academic", "Data", "Python"]
+  tags: [ "Academic", "Data", "Python" ]
   url: "/projects/laff"
   github: "https://github.com/ajhenne/laff"
 
 - title: "LAFF Viewer"
   description: "Data visualization tool and dashboard singular and population datasets."
   image: "/assets/projects/laff-viewer/flarepulses.png"
-  tags: ["Academic", "Data", "Python", "Visualisation", "Web"]
+  tags: [ "Academic", "Data", "Python", "Visualisation", "Web" ]
   url: "/projects/laff-viewer"
   github: "https://github.com/ajhenne/laff-viewer"
   live: "http://laffviewer.streamlit.app/"
@@ -16,7 +28,7 @@
 - title: "text2playlist"
   description: "A backend processing engine optimized for low-latency SVG generation."
   image: "/assets/projects/text2playlist/overview.png"
-  tags: ["API", "Data", "Python", "Web"]
+  tags: [ "API", "Data", "Python", "Web", "Utility" ]
   url: "/projects/text2playlist"
   github: "https://github.com/ajhenne/text2playlist"
   live: "https://text2playlist.streamlit.app"
@@ -24,8 +36,14 @@
 - title: "My Portfolio"
   description: "This very website &mdash; a static site generated using HTML, CSS and JavaScript hosted with Jekyll and GitHub Pages."
   image: "/assets/projects/laff/burst_viewer.png"
-  tags: ["JavaScript", "Web"]
+  tags: [ "JavaScript", "Web" ]
   # url: "/projects/text2playlist"
   github: "https://github.com/ajhenne/ajhenne.github.io"
   # live: "https://text2playlist.streamlit.app"
 
+- title: "Ticked Off"
+  description: "A simple task management solution for Obsidian, without the forced use of emojis that ticks you off. Intuitive add task UI with natural language processing."
+  image: "/assets/projects/ticked-off/ticked-off-1.png"
+  tags: [ "JavaScript", "Utility" ]
+  url: "/projects/ticked-off"
+  github: "https://github.com/ajhenne/ticked-off"
