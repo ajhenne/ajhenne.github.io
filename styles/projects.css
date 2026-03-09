@@ -18,11 +18,11 @@ body {
 .projects-header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: var(--text-secondary-main);
+    color: var(--text-light-main);
 }
 
 .projects-header p {
-    color: var(--text-secondary);
+    color: var(--text-light);
 }
 
 /* === FILTER BAR ================================================== */
@@ -43,7 +43,7 @@ body {
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s ease;
-    color: var(--text-secondary);
+    color: var(--text-light);
 }
 
 .filter-btn:hover {
@@ -65,7 +65,7 @@ body {
 .filter-clear-btn {
     background: var(--primary);
     /* Or your theme color */
-    color: var(--text-primary-main);
+    color: var(--text-dark-main);
     border: none;
     padding: 5px 12px;
     border-radius: 20px;
@@ -74,7 +74,7 @@ body {
 }
 
 .filter-clear-btn:hover {
-    color: var(--text-secondary-main);
+    color: var(--text-light-main);
 }
 
 /* === PROJECT GRID ================================================ */
@@ -152,7 +152,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background: var(--text-secondary-main);
+    background: var(--text-light-main);
 }
 
 .btn-outline {

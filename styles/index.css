@@ -126,7 +126,7 @@
 /* === THEME MODIFIERS === */
 
 .dark-text {
-    color: var(--text-secondary-main);
+    color: var(--text-light-main);
 }
 
 /* === PAGE NAV ==================================================== */
@@ -173,7 +173,7 @@
     text-decoration: none;
     font-family: monospace;
     font-size: 0.9rem;
-    color: var(--text-primary);
+    color: var(--text-dark);
     transition: all 0.3s ease;
 }
 
@@ -238,7 +238,7 @@
 .rotate-text div {
     height: 40px;
     font-size: 1.8rem;
-    color: var(--text-primary-main);
+    color: var(--text-dark-main);
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -272,11 +272,11 @@
     max-width: 800px;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-primary);
+    color: var(--text-dark);
 }
 
 .hero-content p strong {
-    color: var(--text-primary-main);
+    color: var(--text-dark-main);
 }
 
 /* === SCROLL INDICATOR ============================================ */
@@ -294,7 +294,7 @@
 .mouse {
     width: 25px;
     height: 40px;
-    border: 2px solid var(--text-primary);
+    border: 2px solid var(--text-dark);
     border-radius: 20px;
     position: relative;
 }
@@ -354,7 +354,7 @@
 }
 
 .about-text p {
-    color: var(--text-primary);
+    color: var(--text-dark);
     font-size: 1.1rem;
     line-height: 1.8;
 }
@@ -375,6 +375,7 @@
 
 .tech-grid {
     display: grid;
+    color: var(--text-dark-secondary);
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 1rem;
@@ -421,7 +422,7 @@
 .tech-name {
     font-weight: 700;
     font-size: 1.1rem;
-    color: var(--text-primary);
+    /* color: var(--text-dark); */
     letter-spacing: 0.5px;
 }
 
@@ -445,6 +446,7 @@
     list-style: none;
     padding: 0;
     margin: 1rem 0 0 0;
+    color: var(--text-dark-secondary);
 }
 
 .competency-list li {
@@ -453,7 +455,6 @@
     gap: 12px;
     padding: 10px 0;
     border-bottom: 1px solid var(--glass-border);
-    color: var(--text-primary);
     font-size: 0.95rem;
 }
 
@@ -614,7 +615,7 @@
 }
 
 .project-link h3 {
-    color: var(--text-secondary-main);
+    color: var(--text-light-main);
     margin: 0;
     font-size: 1.3rem;
     cursor: pointer;
@@ -627,7 +628,7 @@
 }
 
 .project-link p {
-    color: var(--text-secondary);
+    color: var(--text-light);
     margin: 10px 0;
     line-height: 1.6;
 }
@@ -691,7 +692,7 @@
 
 .skills-side-panel li {
     font-size: 0.85rem;
-    color: var(--text-secondary-main);
+    color: var(--text-light-main);
     padding: 6px 0;
     line-height: 1.2;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -720,7 +721,7 @@
 .contact-description {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-primary);
+    color: var(--text-dark);
     margin-bottom: 25px;
 }
 
@@ -765,14 +766,14 @@
 
 .card-label {
     display: block;
-    color: var(--text-primary-main);
+    color: var(--text-dark-main);
     font-weight: 600;
     font-size: 1rem;
 }
 
 .card-sub {
     display: block;
-    color: var(--text-primary);
+    color: var(--text-dark);
     font-size: 0.8rem;
     margin-top: 2px;
 }
@@ -807,7 +808,7 @@
 }
 
 .status-item span {
-    color: var(--text-primary-main);
+    color: var(--text-dark-main);
 }
 
 .contact-description strong {
