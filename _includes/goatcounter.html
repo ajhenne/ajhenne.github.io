@@ -1,3 +1,12 @@
 {% if jekyll.environment == "production" %}
-<script data-goatcounter="https://ajhenne.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+    window.goatcounter = {
+        referrer: function() {
+            var params = new URLSearchParams(window.location.search);
+            return params.get('ref') || params.get('utm_source') || document.referrer;
+        }
+    };
+</script>
+<script data-goatcounter="https://ajhenne.goatcounter.com/count" 
+        async src="//gc.zgo.at/count.js"></script>
 {% endif %}
